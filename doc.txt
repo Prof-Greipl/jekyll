@@ -1,0 +1,1 @@
+Bilder-Einstellung für Typora: ../img/${filename}

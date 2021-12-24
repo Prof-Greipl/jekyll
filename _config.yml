@@ -1,0 +1,156 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Data  Science and Machine Learning
+
+email: dieter.greipl@haw-landshut.de
+
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+baseurl: "/static/dsml" # the subpath of your site, e.g. /blog
+
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+#remote_theme: adamrehn/jekyll-theme-gitbook@v0.0.1
+#repository: Dixhom/dixhom.github.io
+
+markdown: kramdown
+kramdown:
+   math_engine: mathjax
+   
+theme: "jekyll-theme-gitbook"
+
+plugins: ["jekyll-remote-theme"]
+  
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+
+
+
+
+theme-settings:
+  
+  # Text an Sprache anpassen - ENGLISCH
+  text_index: "Overview"
+
+  # Text an Sprache anpassen - Deutsch
+  # text_index: "Überblick"
+
+
+
+  # The name of the Jekyll collection that contains the site's chapters (REQUIRED)
+  collection: "chapters"
+  
+  
+  # Specifies whether navigation links should be generated for chapter index files that use the `chapter-index` layout (OPTIONAL, defaults to false)
+  indices: false
+  
+  
+  # Copyright settings for the page footer (REQUIRED)
+  copyright:
+    
+    # The author for the copyright notice (REQUIRED, supports markdown formatting)
+    author: "Prof. Dr. Dieter Greipl"
+    
+    # The starting year for the copyright notice (REQUIRED)
+    # (The theme will automatically use the current year as the ending year for the copyright notice)
+    year: 2022
+    
+    # The license for the copyright notice (OPTIONAL, supports markdown formatting, defaults to "All rights reserved.")
+    license: "Licensed under the MIT License, see xxx"
+  
+  
+  # Override the path to the site's logo image (OPTIONAL, defaults to "/assets/images/logo.svg")
+  logo: "/logo.jpg"
+  
+  
+  # Override the path to the site's Open Graph image (OPTIONAL, defaults to "/assets/images/opengraph.png")
+  opengraph: "/path/to/opengraph.png"
+  
+  
+  # Favicon settings (OPTIONAL, only needed if you want to override the defaults)
+  favicon:
+    
+    # Override the PNG version of the favicon (OPTIONAL, defaults to "/assets/images/favicon.png")
+    png: "/path/to/favicon.png"
+    
+    # Override the SVG version of the favicon (OPTIONAL, defaults to "/assets/images/favicon.svg")
+    svg: "/path/to/favicon.svg"
+
+  indices: true 
+  
+  # Font Awesome icon settings (OPTIONAL, only needed if you want to override the defaults)
+  fontawesome:
+    
+    # Specify that you are providing Font Awesome through your own CSS (OPTIONAL, defaults to false)
+    local: true
+    
+    # Specify a Font Awesome Kit URL to provide icons (OPTIONAL, defaults to none, takes precedence over "local" if both are specified)
+    kit: "https://kit.fontawesome.com/xxxxxxxxxx.js"
+    
+    # Override individual Font Awesome icons (OPTIONAL, only needed if you want to override the defaults)
+    icons:
+      
+      # Override the "return to top" icon (OPTIONAL, defaults to "fa-arrow-up")
+      # (Incidentally, if you do have a Font Awesome Pro license then this particular icon override is highly recommended)
+      top: "fa-arrow-alt-to-top"
+      
+      # Other icon overrides go here (see the full list of supported overrides below)
+      # ...
+
+# Configure the permalinks for each chapter
+collections_dir: _collections
+collections:
+  chapters:
+    output: true
+    permalink: /:path
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_collections/_chapters/chapter-one"
+    values:
+      chapter: "Python"
+      chapnum: 1
+  -
+    scope:
+      path: "_collections/_chapters/chapter-two"
+    values:
+      chapter: "Neuronale Netze"
+      chapnum: 2
